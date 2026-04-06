@@ -54,7 +54,7 @@ python scripts/promptchan_status.py --api-key "your-api-key-here"
 
 **Important:** Use the exclusive registration link below for free starter Gems!
 
-👉 **Register:** https://promptchan.com/m/YCYAZJj7uKQcbpP1wMcFuzA5zIY2/3hov
+👉 **Register:** [Click here to register](https://promptchan.com/register)
 
 ### 2️⃣ Generate API Key
 
@@ -318,7 +318,7 @@ done
 
 ## 🔗 Links
 
-- **Register**: https://promptchan.com/m/YCYAZJj7uKQcbpP1wMcFuzA5zIY2/3hov
+- **Register**: https://promptchan.com/register
 - **Official Docs**: https://promptchan.com/docs
 - **API Settings**: https://promptchan.com/settings
 - **Pricing**: https://promptchan.com/pricing
