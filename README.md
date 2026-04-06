@@ -1,10 +1,14 @@
 # PromptChan AI Image Generator
 
-> 🎨 Advanced AI image generation platform with multiple art styles, poses, and filters
+> 🎨 Advanced AI image generation platform with multiple art styles and filters
 
 **Free Trial:** New users receive **100 free Gems** after completing simple tasks!
 
 [中文文档](README_zh.md) | [日本語ドキュメント](README_ja.md)
+
+## 🎯 Overview
+
+PromptChan AI Image Generator is a powerful tool for creating high-quality AI-generated images with various artistic styles. Perfect for artists, content creators, and developers who need fast, professional image generation.
 
 ## 📋 Table of Contents
 
@@ -12,12 +16,11 @@
 - [Registration & API Key](#-registration--api-key)
 - [Usage](#-usage)
 - [Available Styles](#-available-styles)
-- [Available Poses](#-available-poses)
 - [Available Filters](#-available-filters)
 - [Pricing](#-pricing)
 - [Examples](#-examples)
 - [Troubleshooting](#-troubleshooting)
-- [API Reference](#-api-reference)
+- [Using with OpenClaw](#-using-with-openclaw)
 
 ---
 
@@ -58,7 +61,7 @@ python scripts/promptchan_status.py --api-key "your-api-key-here"
 
 ### 2️⃣ Generate API Key
 
-1. Login and go to Settings: **https://promptchan.com/settings**
+1. Login and go to Settings: https://promptchan.com/settings
 2. Scroll to **API Key** section
 3. Click **"Generate"** to create your key
 4. Copy and save your API Key (shown only once!)
@@ -87,9 +90,8 @@ python scripts/promptchan_status.py --api-key "your-api-key-here"
 **Style Settings:**
 | Argument | Default | Description |
 |----------|---------|-------------|
-| `--style`, `-s` | Cinematic | Art style (see [Styles](#-available-styles)) |
-| `--poses` | Default | Character pose (see [Poses](#-available-poses)) |
-| `--filter`, `-f` | Default | Filter effect (see [Filters](#-available-filters)) |
+| `--style`, `-s` | Cinematic | Art style (see [Available Styles](#-available-styles)) |
+| `--filter`, `-f` | Default | Filter effect (see [Available Filters](#-available-filters)) |
 
 **Quality Settings:**
 | Argument | Default | Description |
@@ -104,8 +106,7 @@ python scripts/promptchan_status.py --api-key "your-api-key-here"
 | `--image_size` | 512x768 | Image size (512x512/512x768/768x512) |
 | `--seed` | -1 | Random seed (-1 for random) |
 | `--negative-prompt`, `-n` | - | Negative prompt |
-| `--restore_faces` | false | Face restoration (+1 Gem, realistic only) |
-| `--output`, `-o` | auto | Output file path |
+| `--output`, `-o` | Auto | Output file path |
 
 ### Full Example
 
@@ -114,7 +115,6 @@ python scripts/promptchan_generate.py \
   --prompt "beautiful girl, long hair, sunset, detailed eyes, masterpiece" \
   --negative-prompt "ugly, deformed, noisy, blurry" \
   --style "Anime" \
-  --poses "Default" \
   --filter "Cinematic" \
   --detail 1 \
   --creativity 50 \
@@ -129,23 +129,17 @@ python scripts/promptchan_generate.py \
 
 ## 🎨 Available Styles
 
-| Style | Description |
-|-------|-------------|
-| Cinematic | Movie-style rendering |
-| Anime | Japanese animation style |
-| Hyperreal | Photorealistic |
-| Hyperanime | Enhanced anime |
-| K-Pop | Korean pop style |
-| Fur | Furry art style |
-| Furtoon | Furry cartoon |
-| Render XL+ | Enhanced 3D render |
-| Illustration XL+ | Enhanced illustration |
-| Anime XL | Large anime model |
-| Anime XL+ | Enhanced large anime |
-| Hardcore XL | Intense style |
-| Cinematic XL | Large cinematic model |
-| Photo XL+ | Enhanced photo style |
-| Hyperreal XL+ | Enhanced hyperreal |
+15+ professional art styles for different use cases:
+
+**Popular Styles:**
+- Cinematic - Movie-style rendering
+- Anime - Japanese animation style
+- Hyperreal - Photorealistic images
+- Hyperanime - Enhanced anime style
+- K-Pop - Korean pop aesthetic
+- Render XL+ - Enhanced 3D rendering
+- Illustration XL+ - Professional illustration
+- Photo XL+ - Enhanced photography style
 
 **List all styles:**
 ```bash
@@ -154,46 +148,21 @@ python scripts/promptchan_styles.py --type styles
 
 ---
 
-## 🧍 Available Poses
-
-Over 100 pose options for various scenarios and compositions:
-
-**Common poses:**
-- Default - Neutral standing pose
-- Kneeling - Kneeling position
-- Sitting - Seated position
-- Standing - Standing pose
-- Lying Down - Reclining pose
-- Cuddling - Embrace position
-- Smiling - Happy expression
-- Looking Up - Upward gaze
-- From Behind - Rear view
-- Close-up - Portrait focus
-
-**Advanced poses (Pro features):**
-- Various intimate positions
-- Dynamic action poses
-- Multi-subject interactions
-
-> 📌 **Note:** 116+ poses available in total. See [SKILL.md](SKILL.md) for complete list. Some poses may require Pro subscription.
-
----
-
 ## 🌈 Available Filters
 
-| Filter | Description |
-|--------|-------------|
-| Default | No filter |
-| Cyberpunk | Neon futuristic |
-| VHS | Retro videotape |
-| Manga | Comic book style |
-| Flash | Camera flash |
-| Analog | Film camera look |
-| Professional | Studio quality |
-| Cinematic | Movie grade |
-| Studio | Professional lighting |
-| Polaroid | Instant photo |
-| Vintage | Retro aged |
+11 professional filters for different moods:
+
+- Default - No filter
+- Cyberpunk - Neon futuristic
+- VHS - Retro videotape
+- Manga - Comic book style
+- Flash - Camera flash
+- Analog - Film camera look
+- Professional - Studio quality
+- Cinematic - Movie grade
+- Studio - Professional lighting
+- Polaroid - Instant photo
+- Vintage - Retro aged
 
 **List all filters:**
 ```bash
@@ -209,7 +178,7 @@ python scripts/promptchan_styles.py --type filters
 | Base generation | 1 Gem/image |
 | Extreme quality | +1 Gem |
 | Max quality | +2 Gem |
-| Face restoration | +1 Gem (realistic only) |
+| Face restoration | +1 Gem (realistic styles only) |
 | Peak hours | +0.25 Gem (may apply) |
 
 **Note:** 1 Gem = 1 Image
@@ -218,13 +187,12 @@ python scripts/promptchan_styles.py --type filters
 
 ## 📋 Examples
 
-### 1. Anime Style Girl
+### 1. Anime Style Character
 
 ```bash
 python scripts/promptchan_generate.py \
   --prompt "cute anime girl, long pink hair, school uniform, cherry blossoms" \
   --style "Anime XL+" \
-  --poses "Smiling" \
   --filter "Manga" \
   --creativity 50 \
   --quality "Ultra" \
@@ -232,16 +200,14 @@ python scripts/promptchan_generate.py \
   --output images/anime-girl.png
 ```
 
-### 2. Realistic Portrait
+### 2. Professional Portrait
 
 ```bash
 python scripts/promptchan_generate.py \
-  --prompt "beautiful korean woman, long black hair, elegant dress, studio lighting" \
+  --prompt "beautiful woman, long black hair, elegant dress, studio lighting" \
   --style "Hyperreal XL+" \
-  --poses "Sitting" \
   --filter "Professional" \
   --detail 1 \
-  --restore_faces \
   --api-key "your-api-key" \
   --output images/portrait.png
 ```
@@ -296,56 +262,6 @@ done
 
 ---
 
-## 📚 Scripts
-
-| Script | Description |
-|--------|-------------|
-| `promptchan_generate.py` | Generate images |
-| `promptchan_status.py` | Check balance and status |
-| `promptchan_styles.py` | List available styles/poses/filters |
-
----
-
-## ⚠️ Important Notes
-
-1. **API Key Security**: Keep your API Key private, do not commit to version control
-2. **Content Guidelines**: Do not generate illegal content (account ban risk)
-3. **Cost Control**: Ensure sufficient Gems before generation
-4. **Peak Hours**: Additional charges may apply (0.25 Gem/image)
-5. **Face Restoration**: Only use with realistic styles, not needed for anime
-
----
-
-## 🔗 Links
-
-- **Register**: https://promptchan.com/register
-- **Official Docs**: https://promptchan.com/docs
-- **API Settings**: https://promptchan.com/settings
-- **Pricing**: https://promptchan.com/pricing
-- **Create**: https://promptchan.com/create
-
----
-
-## 📄 License
-
-MIT License
-
----
-
-## 🤝 Contributing
-
-Contributions welcome! Please read our contributing guidelines before submitting PRs.
-
----
-
-## 📞 Support
-
-- **Discord**: [Join our server](https://discord.gg/promptchan)
-- **Email**: support@promptchan.com
-- **Issues**: [GitHub Issues](https://github.com/promptchan/api/issues)
-
----
-
 ## 🤖 Using with OpenClaw
 
 This skill can be integrated with OpenClaw for seamless AI image generation.
@@ -356,10 +272,6 @@ Simply describe the image you want in chat:
 
 ```
 Generate an image: cute anime girl, long pink hair, school uniform, cherry blossoms
-```
-
-```
-Create a cyberpunk style image: neon lights, futuristic city, night
 ```
 
 ### Method 2: Configure in openclaw.json
@@ -379,57 +291,6 @@ Add skill configuration to `openclaw.json`:
 }
 ```
 
-Then use short commands:
-
-```
-/pc Generate an anime girl, pink hair, smiling
-```
-
-```
-/promptchan Cyberpunk style, neon lights, futuristic city
-```
-
-### Method 3: Use sessions_spawn
-
-Call the skill programmatically:
-
-```python
-from openclaw import sessions_spawn
-
-sessions_spawn(
-    task="Generate an image using PromptChan API: cute anime girl, school uniform, cherry blossoms",
-    runtime="subagent",
-    mode="run"
-)
-```
-
-### Method 4: Configure as OpenClaw Tool
-
-Add to `openclaw.json` tools section:
-
-```json
-{
-  "tools": {
-    "promptchan": {
-      "type": "script",
-      "path": "skills/promptchan-for-openclaw/scripts/promptchan_generate.py",
-      "description": "Generate images using PromptChan AI",
-      "parameters": {
-        "prompt": {"type": "string", "required": true},
-        "style": {"type": "string", "default": "Anime"},
-        "quality": {"type": "string", "default": "Ultra"}
-      }
-    }
-  }
-}
-```
-
-Then use in chat:
-
-```
-Use promptchan tool to generate: cute girl, school uniform, city at night
-```
-
 ### Prompt Writing Tips
 
 **Good prompts:**
@@ -442,12 +303,31 @@ Use promptchan tool to generate: cute girl, school uniform, city at night
 - Contradictory: `day and night mixed`
 - Too complex: too many elements in one prompt
 
-### Example OpenClaw Workflow
+---
 
-1. User: `Generate an anime girl with pink hair in school uniform`
-2. OpenClaw calls `promptchan_generate.py` with the prompt
-3. Script sends request to PromptChan API
-4. API returns generated image
-5. OpenClaw displays the image to user
+## 🔗 Links
 
-For more details, see the [OpenClaw documentation](https://docs.openclaw.ai).
+- **Register:** [https://promptchan.com/](https://promptchan.com/m/YCYAZJj7uKQcbpP1wMcFuzA5zIY2/3hov)
+- **Official Docs:** https://promptchan.com/docs
+- **API Settings:** https://promptchan.com/settings
+- **Pricing:** https://promptchan.com/pricing
+
+---
+
+## 📄 License
+
+MIT License
+
+---
+
+## 🤝 Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to contribute.
+
+---
+
+## 📞 Support
+
+- **Discord:** [Join our server](https://discord.gg/promptchan)
+- **Email:** support@promptchan.com
+- **Issues:** [GitHub Issues](https://github.com/promptchan/api/issues)
