@@ -1,0 +1,32 @@
+{
+  "name": "promptchan-for-openclaw",
+  "version": "1.0.0",
+  "description": "PromptChan AI Image Generation API Skill for OpenClaw - Support for multiple art styles, poses, and filters",
+  "author": "3HOV",
+  "license": "MIT",
+  "scripts": [
+    "scripts/promptchan_generate.py",
+    "scripts/promptchan_status.py",
+    "scripts/promptchan_styles.py"
+  ],
+  "config": {
+    "baseUrl": "https://promptchan.com",
+    "registerUrl": "https://promptchan.com/m/YCYAZJj7uKQcbpP1wMcFuzA5zIY2/3hov",
+    "settingsUrl": "https://promptchan.com/settings",
+    "pricingUrl": "https://promptchan.com/pricing"
+  },
+  "usage": {
+    "generate": "python scripts/promptchan_generate.py --prompt \"cute girl\" --api-key \"your-key\" --output images/output.png",
+    "status": "python scripts/promptchan_status.py --api-key \"your-key\"",
+    "styles": "python scripts/promptchan_styles.py --type all"
+  },
+  "features": [
+    "15 种艺术风格",
+    "100+ 种姿势",
+    "11 种滤镜",
+    "多种图像尺寸",
+    "质量等级选择",
+    "人脸修复",
+    "种子控制"
+  ]
+}
